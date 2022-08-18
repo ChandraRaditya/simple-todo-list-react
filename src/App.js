@@ -16,20 +16,19 @@ export const users = [
 export default function App() {
   const [data, setData] = useState([]);
 
-  // useEffect(() => {
-  //   setData(users)
-  // }, [])
+  useEffect(() => {
+    setData(users)
+  }, [])
 
-  // const handleDelete = (event) => {
-  //   const newData = data.splice(event, 1);
-  //   setData(newData);
-  // };
+  const handleDelete = (id) => {
+    setData(data.filter(val => val.id !== id))
+  };
 
-  const datas = users.map((val, id) => {
+  const datas = data.map((val, id) => {
     return (
       <li>
         {val.id} {val.name} {val.status === true ? "ready" : "not ready"}{" "}
-        <button>Delete</button>
+        <button onClick={() => handleDelete(val.id)}>Delete</button>
       </li>
     );
   });
