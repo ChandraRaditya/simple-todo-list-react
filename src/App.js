@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1 className="title">Front End Test - Tebengan</h1>
+      <h1 className="title">Todo LIST / Show List</h1>
       <ul>{datas}</ul>
     </div>
   );
